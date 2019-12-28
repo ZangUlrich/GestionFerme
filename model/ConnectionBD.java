@@ -26,10 +26,10 @@ public class ConnectionBD {
 		}
 
 		try {
-			String BDD = "volailleDor";
+			String BDD = "volailleDor"; //A modifier en fonction de votre base de données
 			String url = "jdbc:mysql://localhost:3306/" + BDD;
-			String user = "root";
-			String passwd = "L@vieestungrandmystere17p165";
+			String user = "root"; //A modifier selon la base de données concernée
+			String passwd = "L@vieestungrandmystere17p165"; //A modifier selon la base de données concernée
 			con=DriverManager.getConnection(url,user,passwd);
 		} catch (SQLException e) {
 			System.err.println(e);
