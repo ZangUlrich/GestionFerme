@@ -72,6 +72,7 @@
                                         <TableColumn prefWidth="75.0" text="idRace" />
                                         <TableColumn prefWidth="75.0" text="nom" />
                                           <TableColumn prefWidth="75.0" text="description" />
+                                          <TableColumn prefWidth="75.0" text="prix_Race" />
                                       </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

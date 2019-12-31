@@ -49,6 +49,7 @@ public class LoginController implements Initializable{
 			System.out.println(str);
 			if (str.equals("cont")) {
 				main.menu();
+				
 			}
 			else if (str.equals("vet")) {
 				main.menu_vet();

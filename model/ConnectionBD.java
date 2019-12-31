@@ -6,6 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.mysql.jdbc.Statement;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableView;
+import javafx.util.Callback;
+
 /**
  * Classe de connection à la bd et de manipulation des différentes
  * requetes. Caractérisée par l'attribut <B>con</B> de type Connection
@@ -69,6 +78,50 @@ public class ConnectionBD {
 		}
 		
 		return str;
+	}
+	
+	public void afficheRace(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Race";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
 	}
 	
 	/**
