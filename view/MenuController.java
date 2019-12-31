@@ -30,12 +30,12 @@ public class MenuController implements Initializable{
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		/*
-		 * ConnectionBD connectionBD=new ConnectionBD(); try {
-		 * connectionBD.afficheRace(data, table); } catch (SQLException e) {
-		 * e.printStackTrace(); } try { connectionBD.Close(); } catch (SQLException e) {
-		 * e.printStackTrace(); }
-		 */		
+		
+		  ConnectionBD connectionBD=new ConnectionBD(); try {
+		  connectionBD.afficheRace(data, table); } catch (SQLException e) {
+		  e.printStackTrace(); } try { connectionBD.Close(); } catch (SQLException e) {
+		  e.printStackTrace(); }
+		 		
 	}
 	
 
