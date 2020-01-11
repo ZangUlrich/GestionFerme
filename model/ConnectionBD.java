@@ -82,6 +82,7 @@ public class ConnectionBD {
 	
 	public void afficheRace(ObservableList<ObservableList> data,TableView tableview) throws SQLException
 	{
+		System.out.println("Table race");
 		data = FXCollections.observableArrayList();
 		Statement statement=null;
 		String query =null;
@@ -123,6 +124,418 @@ public class ConnectionBD {
         tableview.setItems(data);
 
 	}
+
+	public void afficheBande(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table bande");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Bande";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	
+	public void afficheAliment(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table Aliment");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Aliment";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	
+	public void afficheStockAliment(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table StockAliment");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from StockAliment";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	public void afficheFournisseur(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table fournisseur");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Fournisseur";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	
+	public void afficheCollecteOeuf(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table collecte Oeuf");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from CollecteOeuf";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	
+	public void afficheIncubation(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table Incubation");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Incubation";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	public void afficheVaccin(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table vaccin");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Vaccin";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	public void afficheMaladie(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table maladie");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Maladie";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	
+	public void afficheVentes(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table Ventes");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from Ventes";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
+	
+	
 	
 	/**
 	 * Methode de fermeture de la connection a la bd

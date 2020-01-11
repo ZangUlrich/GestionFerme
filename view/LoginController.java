@@ -47,8 +47,8 @@ public class LoginController implements Initializable{
 		}
 		else {
 			System.out.println(str);
-			if (str.equals("cont")) {
-				main.menu();
+			if (str.equals("fer")) {
+				main.menu_fer();
 				
 			}
 			else if (str.equals("vet")) {
@@ -57,8 +57,8 @@ public class LoginController implements Initializable{
 			else if (str.equals("com")) {
 				main.menu_com();
 			}
-			else {
-				main.menu_fer();
+			else if (str.equals("cont")){
+				main.menu();
 			}
 			
 		}
