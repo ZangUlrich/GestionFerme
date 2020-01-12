@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import com.mysql.jdbc.Statement;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -80,10 +82,32 @@ public class ConnectionBD {
 		return str;
 	}
 	
+	
+	public void suppression(String nomTable,String id) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="delete from "+nomTable+ " where "+id;
+		statement.execute(query);
+	}
+	
+	
+	public void ajoutRace(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into Race values"+" (null,'"+strings.get(0);
+		query+="','"+strings.get(1)+"',"+strings.get(2)+");";
+		statement.execute(query);
+	}
+	
+	
+	
+	
 	public void afficheRace(ObservableList<ObservableList> data,TableView tableview) throws SQLException
 	{
+		if(data!=null) data.removeAll(data);
 		System.out.println("Table race");
-		data = FXCollections.observableArrayList();
 		Statement statement=null;
 		String query =null;
 		ResultSet resultSet=null;

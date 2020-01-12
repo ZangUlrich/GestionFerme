@@ -11,10 +11,16 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	private static Stage ref;
+	private static Stage ref1;
 	
 	public Stage getStage() {
 		return ref;
 	}
+	
+	public Stage getStageDelete() {
+		return ref1;
+	}
+	
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 			
@@ -76,6 +82,31 @@ public class Main extends Application {
 		ref.setScene(scene);
 		ref.show();
 	}
+	
+	public void suppression(Stage newstage) throws IOException {
+		URL ressource = Main.class.getResource("../view/Suppression.fxml"); 
+		Parent root = FXMLLoader.load(ressource);
+		Scene scene = new Scene(root);
+		ref1=newstage;
+		newstage.setScene(scene);
+		newstage.setTitle("Suppression");
+		newstage.setResizable(false);
+		newstage.setScene(scene);
+		newstage.show();
+	}
+	
+	public void ajoutRace(Stage newstage) throws IOException {
+		URL ressource = Main.class.getResource("../view/Ajout_race.fxml"); 
+		Parent root = FXMLLoader.load(ressource);
+		Scene scene = new Scene(root);
+		ref1=newstage;
+		newstage.setScene(scene);
+		newstage.setTitle("Ajout de Race");
+		newstage.setResizable(false);
+		newstage.setScene(scene);
+		newstage.show();
+	}
+	
 	
 	
 	public static void main(String[] args) throws SQLException {

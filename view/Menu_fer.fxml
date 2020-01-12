@@ -112,7 +112,7 @@
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
-                                                <JFXButton fx:id="ajoutButtonRace" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="ajoutButtonRace" layoutX="107.0" layoutY="73.0" onAction="#handleAddButtonRace" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -121,7 +121,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                              <children>
-                                                <JFXButton fx:id="deleteButtonSuppression" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="deleteButtonRace" layoutX="107.0" layoutY="73.0" onAction="#handleDeleteButtonRace" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -130,7 +130,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
-                                                <JFXButton fx:id="modifButtonRace" layoutX="107.0" layoutY="85.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="modifButtonRace" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonRace" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -176,7 +176,7 @@
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
-                                                <JFXButton fx:id="ajoutButtonBande" buttonType="RAISED" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="ajoutButtonBande" buttonType="RAISED" layoutX="107.0" layoutY="73.0" onAction="#handleAddButtonBande" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -185,7 +185,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                              <children>
-                                                <JFXButton fx:id="deleteButtonBande" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="deleteButtonBande" layoutX="107.0" layoutY="73.0" onAction="#handleDeleteButtonBande" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -194,7 +194,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
-                                                <JFXButton fx:id="modifButtonBande" layoutX="107.0" layoutY="85.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="modifButtonBande" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonBande" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -239,7 +239,7 @@
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
-                                                <JFXButton fx:id="ajoutButtonAliment" buttonType="RAISED" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="ajoutButtonAliment" buttonType="RAISED" layoutX="107.0" layoutY="73.0" onAction="#handleAddButtonAliment" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -248,7 +248,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                              <children>
-                                                <JFXButton fx:id="deleteButtonAliment" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="deleteButtonAliment" layoutX="107.0" layoutY="73.0" onAction="#handleDeleteButtonAliment" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -257,7 +257,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
-                                                <JFXButton fx:id="modifButtonAlimen" layoutX="107.0" layoutY="85.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="modifButtonAlimen" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonAliment" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -302,7 +302,7 @@
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
-                                                <JFXButton fx:id="ajoutButtonStockAliment" buttonType="RAISED" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="ajoutButtonStockAliment" buttonType="RAISED" layoutX="107.0" layoutY="73.0" onAction="#handleAddButtonStockAliment" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -311,7 +311,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                              <children>
-                                                <JFXButton fx:id="deleteButtonStockAliment" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="deleteButtonStockAliment" layoutX="107.0" layoutY="73.0" onAction="#handleDeleteButtonStockAliment" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -320,7 +320,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
-                                                <JFXButton fx:id="modifButtonAliment" layoutX="107.0" layoutY="85.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="modifButtonAliment" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonStockAliment" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -365,7 +365,7 @@
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
-                                                <JFXButton fx:id="ajoutButtonFournis" buttonType="RAISED" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="ajoutButtonFournis" buttonType="RAISED" layoutX="107.0" layoutY="73.0" onAction="#handleAddButtonFournis" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -374,7 +374,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                              <children>
-                                                <JFXButton fx:id="deleteButtonFournis" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="deleteButtonFournis" layoutX="107.0" layoutY="73.0" onAction="#handleDeleteButtonFournis" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -383,7 +383,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
-                                                <JFXButton fx:id="modifButtonFournis" layoutX="107.0" layoutY="85.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="modifButtonFournis" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonFournis" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -428,7 +428,7 @@
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                              <children>
-                                                <JFXButton fx:id="ajoutButtonCollecteOeuf" buttonType="RAISED" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="ajoutButtonCollecteOeuf" buttonType="RAISED" layoutX="107.0" layoutY="73.0" onAction="#handleAddButtonCollecteOeuf" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="AJOUT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -437,7 +437,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                              <children>
-                                                <JFXButton fx:id="deleteButtonCollecteOeuf" layoutX="107.0" layoutY="73.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="deleteButtonCollecteOeuf" layoutX="107.0" layoutY="73.0" onAction="#handleDeleteButtonCollecteOeuf" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="SUPPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -446,7 +446,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
-                                                <JFXButton fx:id="modifButtonCollecteOeuf" layoutX="107.0" layoutY="85.0" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <JFXButton fx:id="modifButtonCollecteOeuf" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonCollecteOeuf" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>

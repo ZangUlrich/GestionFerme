@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
@@ -14,29 +15,14 @@ import model.ConnectionBD;
 
 public class MenuComController implements Initializable {
 
-	 @FXML
-	    private JFXButton ajoutButton;
+	 	@FXML
+	    private JFXButton ajoutButtonCollecteOeuf;
 
 	    @FXML
-	    private JFXButton deleteButton;
+	    private JFXButton deleteButtonCollecteOeuf;
 
 	    @FXML
-	    private TableView<?> tableRace;
-
-	    @FXML
-	    private JFXButton ajoutButton1;
-
-	    @FXML
-	    private JFXButton deleteButton1;
-
-	    @FXML
-	    private TableView<?> tableBande;
-
-	    @FXML
-	    private JFXButton ajoutButton2;
-
-	    @FXML
-	    private JFXButton deleteButton2;
+	    private JFXButton modifButtonCollecteOeuf;
 
 	    @FXML
 	    private TableView<?> tableCollecteOeuf;
@@ -53,6 +39,42 @@ public class MenuComController implements Initializable {
 	    @FXML
 	    private TableView<?> tableVentes;
 
+	    @FXML
+	    private TableView<?> tableRace;
+
+	    @FXML
+	    private TableView<?> tableBande;
+
+	    @FXML
+	    void handleAddButtonCollecteOeuf(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void handleAddButtonVentes(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void handleDeleteButtonCollecteOeuf(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void handleDeleteButtonVentes(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void handleModifButtonCollecteOeuf(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void handleModifButtonVentes(ActionEvent event) {
+
+	    }
+	    
 		@FXML
 		private ObservableList<ObservableList> data;	    
 	    
