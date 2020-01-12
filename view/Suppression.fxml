@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SuppressionController">
+   <children>
+      <ImageView fitHeight="451.0" fitWidth="600.0" layoutX="195.0" layoutY="-1.0" opacity="0.4" AnchorPane.bottomAnchor="-51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@bande-de-poulet-20863923.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="493.0">
+         <children>
+            <Label layoutX="143.0" layoutY="47.0" prefHeight="36.0" prefWidth="181.0" text="        Suppression" textFill="#793030">
+               <font>
+                  <Font name="Cambria Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="173.0" prefHeight="27.0" prefWidth="153.0" text="Inserer l'Id" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Bell MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <ButtonBar layoutX="153.0" layoutY="346.0" prefHeight="40.0" prefWidth="312.0">
+               <buttons>
+                  <JFXButton fx:id="okButton" buttonType="RAISED" onAction="#handleOkButton" prefHeight="25.0" prefWidth="169.0" style="-fx-background-color: #fca053; -fx-background-radius: 1em;" text="OK">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="cancelButton" buttonType="RAISED" onAction="#handleCancelButton" style="-fx-background-color: #fca053; -fx-background-radius: 1em;" text="Annuler">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></JFXButton>
+               </buttons>
+            </ButtonBar>
+            <JFXTextField fx:id="insertionId" labelFloat="true" layoutX="164.0" layoutY="174.0" prefHeight="25.0" prefWidth="235.0" promptText="insérez l'Id">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

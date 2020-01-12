@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="637.0" fitWidth="600.0" layoutX="1.0" opacity="0.5">
+         <image>
+            <Image url="@bande-de-poulet-20863923.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="575.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="152.0" layoutY="51.0" prefHeight="38.0" prefWidth="255.0" text="Modification Bande" textFill="#793030">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="90.0" layoutY="92.0" prefHeight="411.0" prefWidth="393.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="159.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="234.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="160.0" text="Id Bande">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="154.0" text="Quantité" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="151.0" text="Age" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="154.0" text="Race" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="44.0" prefWidth="154.0" text="Fournisseur" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="151.0" text="Prix Achat" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="155.0" text="Prix Vente" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <JFXTextField labelFloat="true" promptText="id bande" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" promptText="quantité" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXTextField labelFloat="true" promptText="âge" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXTextField labelFloat="true" promptText="id race" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <JFXTextField labelFloat="true" promptText="id fournisseur" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <JFXTextField labelFloat="true" promptText="prix achat" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <JFXTextField labelFloat="true" promptText="prix vente" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <JFXButton layoutX="300.0" layoutY="524.0" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #FCA053; -fx-background-radius: 1em;" text="OK">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="453.0" layoutY="524.0" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #FCA053; -fx-background-radius: 1em;" text="Annuler">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
