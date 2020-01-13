@@ -108,6 +108,7 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -131,6 +132,15 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
                                                 <JFXButton fx:id="modifButtonVentes" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonVentes" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                             <children>
+                                                <JFXButton fx:id="impressionVentePouleButton" layoutX="33.0" layoutY="-22.0" onAction="#handleImpressionVentePouleButton" prefHeight="148.0" prefWidth="298.0" style="-fx-background-color: #eb984d;" text="IMPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>
@@ -168,6 +178,7 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                        <children>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -191,6 +202,15 @@
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
                                                 <JFXButton fx:id="modifButtonVentes1" layoutX="107.0" layoutY="85.0" onAction="#handleModifButtonVentes" prefHeight="170.0" prefWidth="265.0" style="-fx-background-color: #eb984d;" text="MODIFICATION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                             <children>
+                                                <JFXButton fx:id="impressionVenteOeufButton" layoutX="55.0" layoutY="-40.0" onAction="#handleImpressionVenteOeufButton" prefHeight="130.0" prefWidth="320.0" style="-fx-background-color: #eb984d;" text="IMPRESSION" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font size="21.0" />
                                                    </font>

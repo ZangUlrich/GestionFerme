@@ -5,36 +5,46 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
    <children>
-      <JFXTextField fx:id="user_name" labelFloat="true" layoutX="204.0" layoutY="153.0" promptText="User name" />
-      <JFXTextField fx:id="user_password" labelFloat="true" layoutX="204.0" layoutY="247.0" promptText="Password" />
-      <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="94.0" layoutY="338.0" onAction="#handleLoginButton" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #797c82;" text="LOGIN" />
-      <JFXButton fx:id="cancelButton" layoutX="294.0" layoutY="338.0" onAction="#handleCancelButton" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #797c82;" text="CANCEL" />
-      <Text layoutX="210.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="36.0" fitWidth="55.0" layoutX="144.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="500.0" fitWidth="600.0">
          <image>
-            <Image url="@user_icon.png" />
+            <Image url="@poule.PNG" />
          </image>
       </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="38.0" layoutX="153.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@key.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="statut_label" layoutX="128.0" layoutY="111.0" text="Statut" textFill="#754949" />
-      <ImageView fitHeight="52.0" fitWidth="44.0" layoutX="159.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@cadenas.jpg" />
-         </image>
-      </ImageView>
+      <Pane layoutX="107.0" layoutY="101.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.88" prefHeight="298.0" prefWidth="387.0" style="-fx-background-color: #C2AB34; -fx-background-radius: 3em;">
+         <children>
+            <JFXTextField fx:id="user_name" labelFloat="true" layoutX="147.0" layoutY="112.0" promptText="User name" />
+            <JFXTextField fx:id="user_password" labelFloat="true" layoutX="147.0" layoutY="171.0" promptText="Password" />
+            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="147.0" layoutY="244.0" onAction="#handleLoginButton" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #83740C; -fx-background-radius: 1em;" text="LOGIN" />
+            <JFXButton fx:id="cancelButton" layoutX="262.0" layoutY="244.0" onAction="#handleCancelButton" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #83740C; -fx-background-radius: 1em;" text="CANCEL" />
+            <Text layoutX="154.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Label fx:id="statut_label" layoutX="162.0" layoutY="61.0" text="Statut" textFill="#754949" />
+            <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="109.0" layoutY="13.0">
+               <image>
+                  <Image url="@icons8-cadenas-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="52.0" layoutX="60.0" layoutY="105.0">
+               <image>
+                  <Image url="@icons8-utilisateur-entouré-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="67.0" layoutY="165.0">
+               <image>
+                  <Image url="@icons8-clés-2-50.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
-</Pane>
+</AnchorPane>

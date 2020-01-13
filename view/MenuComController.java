@@ -5,6 +5,7 @@ import application.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -17,6 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import model.ConnectionBD;
+import model.CreationPdfVente;
+
 
 public class MenuComController implements Initializable {
 
@@ -25,7 +28,13 @@ public class MenuComController implements Initializable {
 
 	    @FXML
 	    private JFXButton deleteButtonCollecteOeuf;
-
+	    
+	    @FXML
+	    private JFXButton impressionVentePouleButton;
+	    
+	    @FXML
+	    private JFXButton impressionVenteOeufButton;
+	    
 	    @FXML
 	    private JFXButton modifButtonCollecteOeuf;
 
@@ -127,7 +136,20 @@ public class MenuComController implements Initializable {
 		}
 
 
-	    
+		@FXML
+		void handleImpressionVenteOeufButton(ActionEvent event) {
+			CreationPdfVente creationPdfVente =new CreationPdfVente();
+			ArrayList<String> strings=new ArrayList<String>();
+			
+			creationPdfVente.writeUsingIText("VenteOeuf.pdf",strings );
+			
+		}
+
+		@FXML
+		void handleImpressionVentePouleButton(ActionEvent event) {
+
+		}
+
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			

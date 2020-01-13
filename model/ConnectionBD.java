@@ -493,6 +493,16 @@ public class ConnectionBD {
 
 	}
 	
+	
+	public ResultSet afficheDateVente() throws SQLException {
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select dateVente from VenduOeuf where idVenduOeuf=LastInsertId";
+		return resultSet=statement.executeQuery(query);
+	}
+	
 	public void afficheVaccin(ObservableList<ObservableList> data,TableView tableview) throws SQLException
 	{
 		System.out.println("Table vaccin");
@@ -674,6 +684,150 @@ public class ConnectionBD {
 
 	}
 	
+
+	public ObservableList<String> getRaceNom() throws SQLException{
+		ObservableList<String>  data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select nom from Race";
+		resultSet=statement.executeQuery(query);
+		
+		 while(resultSet.next()){
+	            //Iterate Row
+	            //System.out.println("Row [1] added "+row );
+	            data.add(resultSet.getString(1));
+	            //data.add(row);
+
+	        }
+		 return data;
+	}
+	
+	public ObservableList<String> getFournisseurNom() throws SQLException{
+		ObservableList<String>  data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select nomFourn from Fournisseur";
+		resultSet=statement.executeQuery(query);
+		
+		 while(resultSet.next()){
+	            //Iterate Row
+	            //System.out.println("Row [1] added "+row );
+	            data.add(resultSet.getString(1));
+	            //data.add(row);
+
+	        }
+		 return data;
+	}
+	
+	public ObservableList<String> getAlimentNom() throws SQLException{
+		ObservableList<String>  data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select nomAli from Aliment";
+		resultSet=statement.executeQuery(query);
+		
+		 while(resultSet.next()){
+	            //Iterate Row
+	            //System.out.println("Row [1] added "+row );
+	            data.add(resultSet.getString(1));
+	            //data.add(row);
+
+	        }
+		 return data;
+	}
+	
+	public String getAlimentId(String nom) throws SQLException{
+		String  data = new String();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select idAli from Aliment where nomAli = '" + nom + "'";
+		resultSet=statement.executeQuery(query);
+		resultSet.next();
+		data = resultSet.getString(1);
+
+		 return data;
+	}
+	
+	public String getRaceId(String nom) throws SQLException{
+		String  data = new String();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select idRace from Race where nom = '" + nom + "'";
+		resultSet=statement.executeQuery(query);
+		resultSet.next();
+		data = resultSet.getString(1);
+
+		 return data;
+	}
+	
+	public String getFournisseurId(String nom) throws SQLException{
+		String  data = new String();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select idFourn from Fournisseur where nomFourn = '" + nom + "'";
+		resultSet=statement.executeQuery(query);
+		resultSet.next();
+		data = resultSet.getString(1);
+
+		 return data;
+	}
+	
+	
+	public ObservableList<String> getBandeId() throws SQLException{
+		ObservableList<String>  data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select idBande from Bande";
+		resultSet=statement.executeQuery(query);
+		while(resultSet.next())
+		data.add(resultSet.getString(1));
+		System.out.println(data);
+		 return data;
+	}
+	
+	
+	public ObservableList<String> getCollectId() throws SQLException{
+		ObservableList<String>  data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select idCollect from CollecteOeuf";
+		resultSet=statement.executeQuery(query);
+		resultSet.next();
+		data.add(resultSet.getString(1));
+
+		 return data;
+	}
+	
+	public ObservableList<String> getPoussinId() throws SQLException{
+		ObservableList<String>  data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select idPoussin from ProduirePoussin";
+		resultSet=statement.executeQuery(query);
+		resultSet.next();
+		data.add(resultSet.getString(1));
+
+		 return data;
+	}
+
 	/**
 	 * Methode de fermeture de la connection a la bd
 	 * @throws SQLException
