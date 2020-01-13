@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,7 +73,7 @@ public class MenuVetController implements Initializable{
 
     }
 	
-	private ObservableList<ObservableList> data;
+	static ObservableList<ObservableList> data=FXCollections.observableArrayList();
 	
 	
 	@Override

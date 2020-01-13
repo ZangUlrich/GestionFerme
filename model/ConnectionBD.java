@@ -101,6 +101,76 @@ public class ConnectionBD {
 		statement.execute(query);
 	}
 	
+	public void ajoutFournisseur(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into Fournisseur values"+" (null,'"+strings.get(0);
+		query+="','"+strings.get(1)+"',"+strings.get(2)+",'"+strings.get(3);
+		query+="','"+strings.get(4)+"',"+strings.get(5)+");";
+		statement.execute(query);
+	}
+	
+	public void ajoutAliment(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into Aliment values"+" (null,'"+strings.get(0);
+		query+="','"+strings.get(1)+"',"+strings.get(2)+");";
+		statement.execute(query);
+	}
+	
+	public void ajoutBande(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into Bande values"+" (null,"+strings.get(0);
+		query+=","+strings.get(1)+","+strings.get(2)+","+strings.get(3);
+		query+=","+strings.get(4);
+		query+=",'"+strings.get(5)+"',"+strings.get(6)+","+strings.get(7)+");";
+		
+		statement.execute(query);
+	}
+	
+	
+	public void ajoutCollecteOeuf(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into CollecteOeuf values"+" (null,"+strings.get(0);
+		query+=",'"+strings.get(1)+"',"+strings.get(2)+","+strings.get(3);
+		query+=","+strings.get(4);
+		query+=",'"+strings.get(5)+"',"+strings.get(6)+");";
+		statement.execute(query);
+	}
+	
+	public void ajoutStockAliment(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into StockAliment values"+" (null,"+strings.get(0);
+		query+=",'"+strings.get(1)+"',"+strings.get(2)+","+strings.get(3);
+		query+=","+strings.get(4)+");";
+		statement.execute(query);
+	}
+	
+	public void ajoutVendu(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into Vendu values"+" (null,"+strings.get(0);
+		query+=","+strings.get(1)+",'"+strings.get(2)+"',"+strings.get(3)+","+strings.get(4)+","+strings.get(5)+");";
+		statement.execute(query);
+	}
+	
+	public void ajoutVenduOeuf(ArrayList<String> strings) throws SQLException {
+		Statement statement=null;
+		String query =null;
+		statement= (Statement) con.createStatement();
+		query="Insert into VenduOeuf values"+" (null,"+strings.get(0);
+		query+=","+strings.get(1)+",'"+strings.get(2)+"',"+strings.get(3)+","+strings.get(4)+","+strings.get(5)+");";
+		statement.execute(query);
+	}
 	
 	
 	
@@ -522,7 +592,7 @@ public class ConnectionBD {
 		String query =null;
 		ResultSet resultSet=null;
 		statement= (Statement) con.createStatement();
-		query="select * from Ventes";
+		query="select * from Vendu";
 		resultSet=statement.executeQuery(query);
 		
 		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
@@ -559,7 +629,50 @@ public class ConnectionBD {
 
 	}
 	
-	
+	public void afficheVenteOeuf(ObservableList<ObservableList> data,TableView tableview) throws SQLException
+	{
+		System.out.println("Table Ventes oeuf");
+		data = FXCollections.observableArrayList();
+		Statement statement=null;
+		String query =null;
+		ResultSet resultSet=null;
+		statement= (Statement) con.createStatement();
+		query="select * from VenduOeuf";
+		resultSet=statement.executeQuery(query);
+		
+		for(int i=0 ; i<resultSet.getMetaData().getColumnCount(); i++){
+            //We are using non property style for making dynamic table
+            final int j = i;                
+            TableColumn col = new TableColumn(resultSet.getMetaData().getColumnName(i+1));
+            col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){                    
+                public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {                                                                                              
+                    return new SimpleStringProperty(param.getValue().get(j).toString());                        
+                }                    
+            });
+
+            tableview.getColumns().addAll(col); 
+            System.out.println("Column ["+i+"] ");
+        }
+
+        /********************************
+         * Data added to ObservableList *
+         ********************************/
+        while(resultSet.next()){
+            //Iterate Row
+            ObservableList<String> row = FXCollections.observableArrayList();
+            for(int i=1 ; i<=resultSet.getMetaData().getColumnCount(); i++){
+                //Iterate Column
+                row.add(resultSet.getString(i));
+            }
+            System.out.println("Row [1] added "+row );
+            data.add(row);
+
+        }
+
+        //FINALLY ADDED TO TableView
+        tableview.setItems(data);
+
+	}
 	
 	/**
 	 * Methode de fermeture de la connection a la bd

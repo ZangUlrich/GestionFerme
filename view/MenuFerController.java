@@ -4,11 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.jar.Manifest;
-
 import javafx.fxml.Initializable;
 import com.jfoenix.controls.JFXButton;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -94,28 +91,32 @@ public class MenuFerController implements Initializable {
 	private JFXButton modifButtonCollecteOeuf;
 
 	@FXML
-	static ObservableList<ObservableList> data=FXCollections.observableArrayList();;
-	
+	static ObservableList<ObservableList> data=FXCollections.observableArrayList();
+
 	private Main main=new Main();
-		
+
 	@FXML
-	void handleAddButtonAliment(ActionEvent event) {
-		
+	void handleAddButtonAliment(ActionEvent event) throws IOException {
+		Stage newStage = new Stage();
+		main.ajoutAliment(newStage);
 	}
 
 	@FXML
-	void handleAddButtonBande(ActionEvent event) {
-
+	void handleAddButtonBande(ActionEvent event) throws IOException {
+		Stage newStage = new Stage();
+		main.ajoutBande(newStage);
 	}
 
 	@FXML
-	void handleAddButtonCollecteOeuf(ActionEvent event) {
-
+	void handleAddButtonCollecteOeuf(ActionEvent event) throws IOException {
+		Stage newStage = new Stage();
+		main.ajoutCollecteOeuf(newStage);
 	}
 
 	@FXML
-	void handleAddButtonFournis(ActionEvent event) {
-
+	void handleAddButtonFournis(ActionEvent event) throws IOException {
+		Stage newStage = new Stage();
+		main.ajoutFournisseur(newStage);
 	}
 
 	@FXML
@@ -125,8 +126,9 @@ public class MenuFerController implements Initializable {
 	}
 
 	@FXML
-	void handleAddButtonStockAliment(ActionEvent event) {
-		
+	void handleAddButtonStockAliment(ActionEvent event) throws IOException {
+		Stage newStage = new Stage();
+		main.ajoutStockAliment(newStage);
 	}
 
 	@FXML
@@ -167,9 +169,9 @@ public class MenuFerController implements Initializable {
 		strNomTable="Race";
 		strId="idRace=";
 		main.suppression(newStage);
-		
+
 	}
-	
+
 	@FXML
 	void handleDeleteButtonStockAliment(ActionEvent event) throws IOException {
 		Stage newStage=new Stage();
@@ -182,17 +184,17 @@ public class MenuFerController implements Initializable {
 	//données.
 	static String strNomTable=null;
 	static String strId=null;
-	
+
 	//tableView servant à la mise à jour lors de la suppression, ajout
 	//et modification des données
-	
+
 	static TableView<?> tablerefRace;
 	static TableView<?> tablerefBande;
 	static TableView<?> tablerefStockAliment;
 	static TableView<?> tablerefFournisseur;
 	static TableView<?> tablerefAliment;
 	static TableView<?> tablerefCollecteOeuf;
-	
+
 	/**
 	 * Permet la mise à jour des tables
 	 */
@@ -216,7 +218,7 @@ public class MenuFerController implements Initializable {
 			e.printStackTrace(); } try { connectionBD.Close(); } catch (SQLException e) {
 				e.printStackTrace(); }
 	}
-	
+
 
 
 	@FXML
@@ -249,7 +251,7 @@ public class MenuFerController implements Initializable {
 
 	}
 
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		tablerefRace=tableRace;
@@ -258,7 +260,7 @@ public class MenuFerController implements Initializable {
 		tablerefStockAliment=tableStockAli;
 		tablerefCollecteOeuf=tableCollecteOeuf;
 		tablerefFournisseur=tableFournis;
-		
+
 		ConnectionBD connectionBD=new ConnectionBD(); try {
 			connectionBD.afficheRace(data, tableRace);
 			connectionBD.afficheAliment(data, tableAliment);	

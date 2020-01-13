@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,7 +29,7 @@ public class MenuController implements Initializable{
     private TableView<?> tableBande;
     
     @FXML
-    private ObservableList<ObservableList> data;
+    private ObservableList<ObservableList> data=FXCollections.observableArrayList();
     
     @FXML
     private TableView<?> tableAliment;
